@@ -1,0 +1,29 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ArjunKhade/Namaste-React#readme",
+  "bugs": {
+    "url": "https://github.com/ArjunKhade/Namaste-React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArjunKhade/Namaste-React.git"
+  },
+  "license": "ISC",
+  "author": "Arjun Khade",
+  "type": "commonjs",
+  "source": "App.js",
+  "scripts": {
+    "test": "jest",
+    "start":"parcel index.html",
+    "build":"parcel build index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

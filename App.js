@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from 'react-dom/client';
 
 // react java script object 
 const heading = React.createElement("h1",{ id:"heading", xyz:"abc"}, "Hello from Travg");
