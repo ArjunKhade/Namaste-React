@@ -4,25 +4,13 @@ body {
   background: #f7f7f7;
 }
 
-.header{
-
-}
-
-.logo{
-
-}
-
-ul{
- list-style-type: none;    
-}
-
-.header-block{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+.header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .header img {
@@ -51,7 +39,6 @@ ul li:hover {
 }
 
 .body {
-  min-height: 120px;
   margin: 32px 0 0 0;
 }
 
@@ -106,4 +93,24 @@ ul li:hover {
   border-radius: 12px;
   margin-bottom: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.res-card:first-child {
+  position: relative;
+}
+
+.res-card:first-child::before {
+  content: "Promoted";
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  letter-spacing: 1px;
+  z-index: 2;
 }
