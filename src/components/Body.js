@@ -1,9 +1,12 @@
 import RestrorantCard from "./RestrorantCard";
 import restroData from "../../data";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestraurant, setListOfRestraurant] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [filteredRestraurant, setFilteredRestraurant] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -17,29 +20,67 @@ const Body = () => {
 
     console.log(json);
     setListOfRestraurant(restroData);
+    setFilteredRestraurant(restroData);
   };
 
   if (listOfRestraurant.length === 0) {
-    return <h2>Loading.....</h2>;
+    return <Shimmer></Shimmer>;
   }
 
   return (
     <div>
       <div className="body"></div>
-      <div className="search"></div>
-      <button
-        className="filter btn"
-        onClick={() => {
-          const filteredRestraurant = listOfRestraurant.filter(
-            (restro) => restro.rating > 4.5
-          );
-          setListOfRestraurant(filteredRestraurant);
-        }}
-      >
-        Top Rated Restrorent
-      </button>
+      <div className="search-filter-block">
+        <div className="search">
+          <input
+            type="text"
+            className="searchBox"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                if (searchText.trim() === "") {
+                  setFilteredRestraurant(listOfRestraurant);
+                } else {
+                  const filteredRestro = listOfRestraurant.filter((restro) =>
+                    restro.resName.toLowerCase().includes(searchText.toLowerCase())
+                  );
+                  setFilteredRestraurant(filteredRestro);
+                }
+              }
+            }}
+          />
+          <button
+            onClick={() => {
+              if (searchText.trim() === "") {
+                setFilteredRestraurant(listOfRestraurant);
+              } else {
+                const filteredRestro = listOfRestraurant.filter((restro) =>
+                  restro.resName.toLowerCase().includes(searchText.toLowerCase())
+                );
+                setFilteredRestraurant(filteredRestro);
+              }
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <button
+          className="filter btn"
+          onClick={() => {
+            const fldRestraurant = listOfRestraurant.filter(
+              (restro) => restro.rating > 4.5
+            );
+            setFilteredRestraurant(fldRestraurant);
+          }}
+        >
+          Top Rated Restrorent
+        </button>
+      </div>
       <div className="res-container">
-        {listOfRestraurant.map((restro) => (
+        {filteredRestraurant.map((restro) => (
           <RestrorantCard key={restro.id} restroData={restro} />
         ))}
       </div>

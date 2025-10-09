@@ -42,9 +42,52 @@ ul li:hover {
   margin: 32px 0 0 0;
 }
 
+.search-filter-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
 .search {
-  margin: 0 auto 24px auto;
-  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchBox {
+  padding: 10px 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fafbfc;
+}
+
+.searchBox:focus {
+  border-color: #0078d7;
+  background: #fff;
+}
+
+.search button,
+.filter.btn {
+  padding: 10px 20px;
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.search button:hover,
+.filter.btn:hover {
+  background: #005fa3;
 }
 
 .res-container {
@@ -113,4 +156,58 @@ ul li:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   letter-spacing: 1px;
   z-index: 2;
+}
+
+/* Shimmer UI  */
+.shimmer-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 28px 20px;
+  min-width: 260px;
+  max-width: 320px;
+  text-align: center;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: shimmer-bg 1.5s infinite linear alternate;
+}
+
+.shimmer-img {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ececec 25%, #f5f5f5 50%, #ececec 75%);
+  margin-bottom: 16px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.shimmer-line {
+  height: 18px;
+  width: 80%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ececec 25%, #f5f5f5 50%, #ececec 75%);
+  margin: 8px 0;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.shimmer-title {
+  width: 60%;
+  height: 22px;
+}
+
+.shimmer-cuisine,
+.shimmer-rating,
+.shimmer-time {
+  width: 40%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
 }
