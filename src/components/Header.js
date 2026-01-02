@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constant";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 
 const Header = () => {
   const [loginBtnLabel, setLoginBtnLabel] = useState("Login");
+
+  const isOnline = useOnlineStatus();
+
+  
 
   return (
     <div className="header-block">
@@ -11,9 +18,11 @@ const Header = () => {
       </div>
       <div>
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li>{isOnline? "😀":"😒"}</li>
+          <Link to={"/"}>Home</Link>
+          <Link to={"/about"}>About Us</Link>
+          <Link to={"/contact"}>Contact Us</Link>
+          <Link to={"/grocery"}>Grocery</Link>
           <button
             onClick={() => {
               loginBtnLabel === "Login"
