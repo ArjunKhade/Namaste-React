@@ -211,3 +211,9 @@ ul li:hover {
     background-position: 400px 0;
   }
 }
+
+.res-container a {
+  text-decoration: none !important;
+  color: inherit;     /* keep card colors */
+  display: block;     /* allow full-card click area */
+}
