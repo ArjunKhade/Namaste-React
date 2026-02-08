@@ -77,7 +77,7 @@ const Body = () => {
             setFilteredRestraurant(fldRestraurant);
           }}
         >
-          Top Rated Restrorent
+          Top Rated Restaurant
         </button>
       </div>
       <div className="res-container">
