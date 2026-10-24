@@ -18,6 +18,7 @@
     "test": "jest",
     "start": "parcel index.html",
     "build": "parcel build index.html --public-url ./",
+    "build:vercel": "parcel build index.html --public-url /",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

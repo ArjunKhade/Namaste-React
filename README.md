@@ -4,9 +4,11 @@ A modern food ordering app built with React, Parcel, and React Router. This proj
 
 ## Live Demo
 
-GitHub Pages ready:
+GitHub Pages:
 
 - Production site: https://arjunkhade.github.io/Namaste-React/
+
+The app is also configured for Vercel deployment. Use the Vercel deployment URL once deployed.
 
 ## Features
 
@@ -84,9 +86,21 @@ npm run deploy
 
 This script builds the app and publishes the `dist` folder to the `gh-pages` branch using `gh-pages`.
 
-## Notes for GitHub Pages
+### Deploy to Vercel
 
-This project is configured for static hosting on GitHub Pages. The build script uses a relative public URL so assets work correctly when served from a GitHub Pages subpath.
+1. Push the project to GitHub.
+2. In [Vercel](https://vercel.com/), select **Add New → Project** and import the repository.
+3. Keep the detected project settings, or set:
+   - **Framework Preset:** Other
+   - **Build Command:** `npm run build:vercel`
+   - **Output Directory:** `dist`
+4. Select **Deploy**.
+
+The included `vercel.json` configures these build settings and routes client-side URLs back to the app entry page, so refreshing routes such as `/about` or `/restaurant/1` works.
+
+## Hosting Notes
+
+The default `npm run build` uses relative asset URLs for GitHub Pages. Vercel uses `npm run build:vercel`, which builds assets from the domain root. Keep the two build commands separate so each host serves assets correctly.
 
 ## Screenshots
 
