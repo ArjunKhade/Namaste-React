@@ -4,11 +4,8 @@ A modern food ordering app built with React, Parcel, and React Router. This proj
 
 ## Live Demo
 
-GitHub Pages:
-
-- Production site: https://arjunkhade.github.io/Namaste-React/
-
-The app is also configured for Vercel deployment. Use the Vercel deployment URL once deployed.
+- Vercel: https://namaste-react-woad.vercel.app/
+- GitHub Pages: https://arjunkhade.github.io/Namaste-React/
 
 ## Features
 
