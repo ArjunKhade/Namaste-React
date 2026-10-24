@@ -1,8 +1,8 @@
 {
   "name": "namaste_react",
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/ArjunKhade/Namaste-React#readme",
+  "description": "Namaste React food ordering app built with React and Parcel.",
+  "homepage": "https://arjunkhade.github.io/Namaste-React/",
   "bugs": {
     "url": "https://github.com/ArjunKhade/Namaste-React/issues"
   },
@@ -17,9 +17,12 @@
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "parcel": "^2.16.0"
   },
   "dependencies": {
