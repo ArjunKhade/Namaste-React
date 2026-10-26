@@ -11,23 +11,23 @@ const Body = () => {
   const [filteredRestraurant, setFilteredRestraurant] = useState([]);
 
   useEffect(() => {
-    // fetchData();
+    fetchData();
     setListOfRestraurant(restroData);
     setFilteredRestraurant(restroData);
   }, []);
 
-  // const fetchData = async () => {
-  //   const data = await fetch(SWIGGY_API_URL);
-  //   const json = await data.json();
+  const fetchData = async () => {
+    const data = await fetch(SWIGGY_API_URL);
+    const json = await data.json();
 
-  //   console.log(json);
-  //   setListOfRestraurant(restroData);
-  //   setFilteredRestraurant(restroData);
-  // };
+    console.log(json);
+    setListOfRestraurant(restroData);
+    setFilteredRestraurant(restroData);
+  };
 
-  // if (listOfRestraurant.length === 0) {
-  //   return <Shimmer></Shimmer>;
-  // }
+  if (listOfRestraurant.length === 0) {
+    return <Shimmer></Shimmer>;
+  }
 
   return (
     <main className="home-page">
