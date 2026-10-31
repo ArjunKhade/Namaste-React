@@ -7,6 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import GitHubProfile from "./components/GitHubProfile";
 // import Grocery from "./components/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery") );
@@ -46,6 +47,10 @@ const appRouter = createBrowserRouter([
         path: "restaurant/:resId",
         element: <RestaurantMenu />,
       },
+      {
+        path: "profile",
+        element: <GitHubProfile/>
+      }
        
     ],
     errorElement: <Error />,

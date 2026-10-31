@@ -25,11 +25,11 @@ const Body = () => {
     setFilteredRestraurant(restroData);
   };
 
-  if (listOfRestraurant.length === 0) {
-    return <Shimmer></Shimmer>;
-  }
+  // if (listOfRestraurant.length === 0) {
+  //   return <Shimmer></Shimmer>;
+  // }
 
-  return (
+  return listOfRestraurant.length === 0 ? <Shimmer></Shimmer> : (
     <main className="home-page">
       <section className="home-hero">
         <div className="home-hero-copy">
