@@ -22,6 +22,10 @@ const AppLayout = () => {
   );
 };
 
+const basename = window.location.pathname.startsWith("/Namaste-React")
+  ? "/Namaste-React"
+  : "/";
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -55,7 +59,7 @@ const appRouter = createBrowserRouter([
     ],
     errorElement: <Error />,
   },
-]);
+], { basename });
 
 //root of react
 const root = ReactDOM.createRoot(document.getElementById("root"));
