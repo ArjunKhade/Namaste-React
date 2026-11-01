@@ -1,35 +1,33 @@
 import RestrorantCard from "./RestrorantCard";
-import { restroData } from "../../data";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { SWIGGY_API_URL } from "../utils/constant";
+import useRestaurantList from "../utils/useRestaurantList";
 
 const Body = () => {
-  const [listOfRestraurant, setListOfRestraurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [filteredRestraurant, setFilteredRestraurant] = useState([]);
 
-  useEffect(() => {
-    fetchData();
-    setListOfRestraurant(restroData);
-    setFilteredRestraurant(restroData);
-  }, []);
+  const {
+    restaurantList: listOfRestraurant,
+    filteredRestraurant,
+    setFilteredRestraurant,
+    loading,
+    error,
+  } = useRestaurantList();
 
-  const fetchData = async () => {
-    const data = await fetch(SWIGGY_API_URL);
-    const json = await data.json();
+  if (loading) {
+    return <Shimmer />;
+  }
 
-    console.log(json);
-    setListOfRestraurant(restroData);
-    setFilteredRestraurant(restroData);
-  };
+  if (error) {
+    return (
+      <main className="home-page">
+        <p role="alert">Unable to load restaurants: {error}</p>
+      </main>
+    );
+  }
 
-  // if (listOfRestraurant.length === 0) {
-  //   return <Shimmer></Shimmer>;
-  // }
-
-  return listOfRestraurant.length === 0 ? <Shimmer></Shimmer> : (
+  return (
     <main className="home-page">
       <section className="home-hero">
         <div className="home-hero-copy">
@@ -82,7 +80,7 @@ const Body = () => {
                 if (searchText.trim() === "") {
                   setFilteredRestraurant(listOfRestraurant);
                 } else {
-                  const filteredRestro = listOfRestraurant.filter((restro) =>
+                  const filteredRestro = listOfRestraurant?.filter((restro) =>
                     restro.resName.toLowerCase().includes(searchText.toLowerCase())
                   );
                   setFilteredRestraurant(filteredRestro);
@@ -95,7 +93,7 @@ const Body = () => {
               if (searchText.trim() === "") {
                 setFilteredRestraurant(listOfRestraurant);
               } else {
-                const filteredRestro = listOfRestraurant.filter((restro) =>
+                const filteredRestro = listOfRestraurant?.filter((restro) =>
                   restro.resName.toLowerCase().includes(searchText.toLowerCase())
                 );
                 setFilteredRestraurant(filteredRestro);
