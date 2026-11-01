@@ -9,37 +9,38 @@ const useRestaurantList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const controller = new AbortController();
+    // const controller = new AbortController();
 
     const fetchRestaurantList = async () => {
-      try {
-        const response = await fetch(SWIGGY_API_URL, {
-          signal: controller.signal,
-        });
-        if (!response.ok) {
-          throw new Error(`Restaurant request failed (${response.status}).`);
-        }
+      // try {
+        // const response = await fetch(SWIGGY_API_URL, {
+        //   signal: controller.signal,
+        // });
+        // if (!response.ok) {
+        //   throw new Error(`Restaurant request failed (${response.status}).`);
+        // }
 
-        await response.json();
-        setRestaurantList(restroData);
-        setFilteredRestraurant(restroData);
-      } catch (requestError) {
-        if (!controller.signal.aborted) {
-          setError(
-            requestError instanceof Error
-              ? requestError.message
-              : "Unable to load restaurants."
-          );
-        }
-      } finally {
-        if (!controller.signal.aborted) {
-          setLoading(false);
-        }
-      }
+        // await response.json();
+        
+      // } catch (requestError) {
+      //   if (!controller.signal.aborted) {
+      //     setError(
+      //       requestError instanceof Error
+      //         ? requestError.message
+      //         : "Unable to load restaurants."
+      //     );
+      //   }
+      // } finally {
+      //   if (!controller.signal.aborted) {
+      //     setLoading(false);
+      //   }
+      // }
+      setRestaurantList(restroData);
+      setFilteredRestraurant(restroData);
     };
 
     fetchRestaurantList();
-    return () => controller.abort();
+    // return () => controller.abort();
   }, []);
 
   return {
