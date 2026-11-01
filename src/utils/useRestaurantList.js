@@ -40,6 +40,7 @@ const useRestaurantList = () => {
     };
 
     fetchRestaurantList();
+    setLoading(false);
     // return () => controller.abort();
   }, []);
 
