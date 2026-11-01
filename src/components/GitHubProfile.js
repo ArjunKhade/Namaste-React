@@ -3,6 +3,45 @@ import "./GitHubProfile.css";
 
 const PROFILE_URL = "https://api.github.com/users/ArjunKhade";
 
+const GitHubProfileShimmer = () => (
+  <main className="github-profile-page" aria-busy="true">
+    <article className="github-profile-card github-profile-shimmer" role="status" aria-label="Loading GitHub profile">
+      <div className="github-profile-banner github-profile-skeleton" />
+      <div className="github-profile-content">
+        <div className="github-profile-avatar github-profile-skeleton" />
+        <div className="github-profile-heading">
+          <div className="github-profile-skeleton-heading">
+            <div className="github-profile-skeleton github-profile-skeleton-eyebrow" />
+            <div className="github-profile-skeleton github-profile-skeleton-name" />
+            <div className="github-profile-skeleton github-profile-skeleton-username" />
+          </div>
+          <div className="github-profile-skeleton github-profile-skeleton-button" />
+        </div>
+        <div className="github-profile-skeleton github-profile-skeleton-bio" />
+        <div className="github-profile-skeleton-details">
+          <div className="github-profile-skeleton github-profile-skeleton-detail" />
+          <div className="github-profile-skeleton github-profile-skeleton-detail" />
+          <div className="github-profile-skeleton github-profile-skeleton-detail" />
+        </div>
+        <div className="github-profile-shimmer-stats">
+          <div>
+            <div className="github-profile-skeleton github-profile-skeleton-stat" />
+            <div className="github-profile-skeleton github-profile-skeleton-stat-label" />
+          </div>
+          <div>
+            <div className="github-profile-skeleton github-profile-skeleton-stat" />
+            <div className="github-profile-skeleton github-profile-skeleton-stat-label" />
+          </div>
+          <div>
+            <div className="github-profile-skeleton github-profile-skeleton-stat" />
+            <div className="github-profile-skeleton github-profile-skeleton-stat-label" />
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+);
+
 const GitHubProfile = () => {
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState("");
@@ -39,11 +78,7 @@ const GitHubProfile = () => {
   }
 
   if (!profile) {
-    return (
-      <main className="github-profile-page">
-        <p className="github-profile-message" role="status">Loading GitHub profile…</p>
-      </main>
-    );
+    return <GitHubProfileShimmer />;
   }
 
   const joinedDate = profile.created_at

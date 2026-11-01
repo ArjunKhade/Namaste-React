@@ -48,7 +48,7 @@ const Header = () => {
           <li><Link to="/contact">Contact Us</Link></li>
           <li><Link to="/grocery">Grocery</Link></li>
           <li><Link to="/profile">Profile</Link></li>
-          <li>
+          {/* <li>
             <button
               className="login-button"
               onClick={() => {
@@ -59,7 +59,7 @@ const Header = () => {
             >
               {loginBtnLabel}
             </button>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>

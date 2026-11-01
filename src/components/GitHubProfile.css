@@ -160,6 +160,117 @@
   text-align: center;
 }
 
+.github-profile-shimmer {
+  overflow: hidden;
+}
+
+.github-profile-skeleton {
+  background: linear-gradient(90deg, #edf0f4 25%, #f7f8fa 50%, #edf0f4 75%);
+  background-size: 200% 100%;
+  animation: github-profile-shimmer 1.4s ease-in-out infinite;
+}
+
+.github-profile-shimmer .github-profile-banner {
+  background-color: #edf0f4;
+}
+
+.github-profile-shimmer .github-profile-avatar {
+  border-color: #fff;
+}
+
+.github-profile-skeleton-heading {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.github-profile-skeleton-eyebrow {
+  width: 112px;
+  height: 12px;
+  border-radius: 6px;
+}
+
+.github-profile-skeleton-name {
+  width: min(250px, 60vw);
+  height: 36px;
+  border-radius: 8px;
+}
+
+.github-profile-skeleton-username {
+  width: 130px;
+  height: 16px;
+  border-radius: 8px;
+}
+
+.github-profile-skeleton-button {
+  width: 145px;
+  height: 42px;
+  border-radius: 999px;
+}
+
+.github-profile-skeleton-bio {
+  width: 80%;
+  height: 16px;
+  margin-top: 28px;
+  border-radius: 8px;
+}
+
+.github-profile-skeleton-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 22px;
+}
+
+.github-profile-skeleton-detail {
+  width: 125px;
+  height: 14px;
+  border-radius: 7px;
+}
+
+.github-profile-shimmer-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+  border-top: 1px solid #e9edf2;
+  padding-top: 24px;
+}
+
+.github-profile-shimmer-stats > div {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.github-profile-shimmer-stats > div + div {
+  border-left: 1px solid #e9edf2;
+}
+
+.github-profile-skeleton-stat {
+  width: 44px;
+  height: 24px;
+  border-radius: 6px;
+}
+
+.github-profile-skeleton-stat-label {
+  width: 74px;
+  height: 13px;
+  border-radius: 7px;
+}
+
+@keyframes github-profile-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .github-profile-skeleton {
+    animation: none;
+  }
+}
+
 @media (max-width: 560px) {
   .github-profile-page {
     width: calc(100% - 24px);
