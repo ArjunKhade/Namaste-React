@@ -1,3 +1,24 @@
+const menuImages = {
+  indian:
+    "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&w=600",
+  pasta:
+    "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=80",
+  salad:
+    "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+  pizza:
+    "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&w=600",
+  asian:
+    "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+  mexican:
+    "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=600&q=80",
+  seafood:
+    "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=600&q=80",
+  sushi:
+    "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg?auto=compress&w=600",
+  burger:
+    "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&w=600",
+};
+
 export const restroData = [
   {
     id: 1,
@@ -21,7 +42,7 @@ export const restroData = [
             price: "₹240",
             spicy: true,
             veg: false,
-            img: "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&w=600"
+            img: menuImages.indian
           },
           {
             id: "1-s1-i2",
@@ -29,7 +50,8 @@ export const restroData = [
             desc: "Chargrilled paneer cubes marinated in spices.",
             price: "₹180",
             spicy: false,
-            veg: true
+            veg: true,
+            img: menuImages.indian
           }
         ]
       },
@@ -37,8 +59,8 @@ export const restroData = [
         id: "1-s2",
         title: "Pasta & Mains",
         items: [
-          { id: "1-s2-i1", name: "Creamy Alfredo Pasta", desc: "Fettuccine in parmesan cream.", price: "₹260", spicy: false, veg: true },
-          { id: "1-s2-i2", name: "Sweet Chili Chicken", desc: "Seared chicken with sweet-chili glaze.", price: "₹320", spicy: true, veg: false }
+          { id: "1-s2-i1", name: "Creamy Alfredo Pasta", desc: "Fettuccine in parmesan cream.", price: "₹260", spicy: false, veg: true, img: menuImages.pasta },
+          { id: "1-s2-i2", name: "Sweet Chili Chicken", desc: "Seared chicken with sweet-chili glaze.", price: "₹320", spicy: true, veg: false, img: menuImages.asian }
         ]
       }
     ]
@@ -58,15 +80,15 @@ export const restroData = [
         id: "2-s1",
         title: "Thalis & Combos",
         items: [
-          { id: "2-s1-i1", name: "Deluxe Veg Thali", desc: "Assorted veg curries, dal, rice and roti.", price: "₹199", spicy: false, veg: true },
-          { id: "2-s1-i2", name: "Chicken Handi", desc: "Slow-cooked chicken in rich gravy.", price: "₹299", spicy: true, veg: false }
+          { id: "2-s1-i1", name: "Deluxe Veg Thali", desc: "Assorted veg curries, dal, rice and roti.", price: "₹199", spicy: false, veg: true, img: menuImages.indian },
+          { id: "2-s1-i2", name: "Chicken Handi", desc: "Slow-cooked chicken in rich gravy.", price: "₹299", spicy: true, veg: false, img: menuImages.indian }
         ]
       },
       {
         id: "2-s2",
         title: "Dosas",
         items: [
-          { id: "2-s2-i1", name: "Masala Dosa", desc: "Crispy dosa with spiced potato.", price: "₹120", spicy: false, veg: true }
+          { id: "2-s2-i1", name: "Masala Dosa", desc: "Crispy dosa with spiced potato.", price: "₹120", spicy: false, veg: true, img: menuImages.indian }
         ]
       }
     ]
@@ -86,15 +108,15 @@ export const restroData = [
         id: "3-s1",
         title: "Punjabi Classics",
         items: [
-          { id: "3-s1-i1", name: "Butter Chicken", desc: "Creamy tomato-based curry with tender chicken.", price: "₹320", spicy: false, veg: false },
-          { id: "3-s1-i2", name: "Chole Bhature", desc: "Spiced chickpeas with fluffy bhature.", price: "₹160", spicy: true, veg: true }
+          { id: "3-s1-i1", name: "Butter Chicken", desc: "Creamy tomato-based curry with tender chicken.", price: "₹320", spicy: false, veg: false, img: menuImages.indian },
+          { id: "3-s1-i2", name: "Chole Bhature", desc: "Spiced chickpeas with fluffy bhature.", price: "₹160", spicy: true, veg: true, img: menuImages.indian }
         ]
       },
       {
         id: "3-s2",
         title: "Indo-Chinese",
         items: [
-          { id: "3-s2-i1", name: "Chilli Paneer", desc: "Stir-fried paneer with peppers.", price: "₹220", spicy: true, veg: true }
+          { id: "3-s2-i1", name: "Chilli Paneer", desc: "Stir-fried paneer with peppers.", price: "₹220", spicy: true, veg: true, img: menuImages.asian }
         ]
       }
     ]
@@ -114,15 +136,15 @@ export const restroData = [
         id: "4-s1",
         title: "Mexican Specials",
         items: [
-          { id: "4-s1-i1", name: "Tacos Al Pastor", desc: "Marinated pork tacos with pineapple.", price: "₹220", spicy: false, veg: false },
-          { id: "4-s1-i2", name: "Veg Quesadilla", desc: "Grilled tortilla with cheese & veggies.", price: "₹180", spicy: false, veg: true }
+          { id: "4-s1-i1", name: "Tacos Al Pastor", desc: "Marinated pork tacos with pineapple.", price: "₹220", spicy: false, veg: false, img: menuImages.mexican },
+          { id: "4-s1-i2", name: "Veg Quesadilla", desc: "Grilled tortilla with cheese & veggies.", price: "₹180", spicy: false, veg: true, img: menuImages.mexican }
         ]
       },
       {
         id: "4-s2",
         title: "Continental",
         items: [
-          { id: "4-s2-i1", name: "Grilled Salmon", desc: "Pan-seared salmon with lemon butter.", price: "₹420", spicy: false, veg: false }
+          { id: "4-s2-i1", name: "Grilled Salmon", desc: "Pan-seared salmon with lemon butter.", price: "₹420", spicy: false, veg: false, img: menuImages.seafood }
         ]
       }
     ]
@@ -142,8 +164,8 @@ export const restroData = [
         id: "5-s1",
         title: "Salads & Bowls",
         items: [
-          { id: "5-s1-i1", name: "Quinoa Power Bowl", desc: "Quinoa, roasted veggies & avocado.", price: "₹220", spicy: false, veg: true },
-          { id: "5-s1-i2", name: "Caesar Salad", desc: "Romaine with Caesar dressing.", price: "₹160", spicy: false, veg: true }
+          { id: "5-s1-i1", name: "Quinoa Power Bowl", desc: "Quinoa, roasted veggies & avocado.", price: "₹220", spicy: false, veg: true, img: menuImages.salad },
+          { id: "5-s1-i2", name: "Caesar Salad", desc: "Romaine with Caesar dressing.", price: "₹160", spicy: false, veg: true, img: menuImages.salad }
         ]
       }
     ]
@@ -163,8 +185,8 @@ export const restroData = [
         id: "6-s1",
         title: "Comfort Mains",
         items: [
-          { id: "6-s1-i1", name: "Margherita Pizza", desc: "Classic cheese pizza with basil.", price: "₹320", spicy: false, veg: true },
-          { id: "6-s1-i2", name: "Stir Fry Noodles", desc: "Veg noodles with light soy sauce.", price: "₹200", spicy: false, veg: true }
+          { id: "6-s1-i1", name: "Margherita Pizza", desc: "Classic cheese pizza with basil.", price: "₹320", spicy: false, veg: true, img: menuImages.pizza },
+          { id: "6-s1-i2", name: "Stir Fry Noodles", desc: "Veg noodles with light soy sauce.", price: "₹200", spicy: false, veg: true, img: menuImages.asian }
         ]
       }
     ]
@@ -184,8 +206,8 @@ export const restroData = [
         id: "7-s1",
         title: "Starters",
         items: [
-          { id: "7-s1-i1", name: "Garlic Bread", desc: "Oven-baked garlic butter bread.", price: "₹120", spicy: false, veg: true },
-          { id: "7-s1-i2", name: "Spring Rolls", desc: "Crispy rolls with veg filling.", price: "₹140", spicy: false, veg: true }
+          { id: "7-s1-i1", name: "Garlic Bread", desc: "Oven-baked garlic butter bread.", price: "₹120", spicy: false, veg: true, img: menuImages.pizza },
+          { id: "7-s1-i2", name: "Spring Rolls", desc: "Crispy rolls with veg filling.", price: "₹140", spicy: false, veg: true, img: menuImages.asian }
         ]
       }
     ]
@@ -206,8 +228,8 @@ export const restroData = [
         id: "9-s1",
         title: "Quick Bites",
         items: [
-          { id: "9-s1-i1", name: "Club Sandwich", desc: "Triple-decker with fries.", price: "₹200", spicy: false, veg: false },
-          { id: "9-s1-i2", name: "Veg Wrap", desc: "Fresh veggie wrap with hummus.", price: "₹150", spicy: false, veg: true }
+          { id: "9-s1-i1", name: "Club Sandwich", desc: "Triple-decker with fries.", price: "₹200", spicy: false, veg: false, img: menuImages.burger },
+          { id: "9-s1-i2", name: "Veg Wrap", desc: "Fresh veggie wrap with hummus.", price: "₹150", spicy: false, veg: true, img: menuImages.salad }
         ]
       }
     ]
@@ -227,8 +249,8 @@ export const restroData = [
         id: "10-s1",
         title: "Street Specials",
         items: [
-          { id: "10-s1-i1", name: "Vada Pav", desc: "Mumbai's famous spiced potato burger.", price: "₹60", spicy: true, veg: true },
-          { id: "10-s1-i2", name: "Pav Bhaji", desc: "Mixed vegetable mash with buttered buns.", price: "₹120", spicy: true, veg: true }
+          { id: "10-s1-i1", name: "Vada Pav", desc: "Mumbai's famous spiced potato burger.", price: "₹60", spicy: true, veg: true, img: menuImages.indian },
+          { id: "10-s1-i2", name: "Pav Bhaji", desc: "Mixed vegetable mash with buttered buns.", price: "₹120", spicy: true, veg: true, img: menuImages.indian }
         ]
       }
     ]
@@ -248,8 +270,8 @@ export const restroData = [
         id: "11-s1",
         title: "Mughlai Delights",
         items: [
-          { id: "11-s1-i1", name: "Rogan Josh", desc: "Slow-cooked lamb curry.", price: "₹420", spicy: false, veg: false },
-          { id: "11-s1-i2", name: "Dal Makhani", desc: "Creamy black lentils simmered slowly.", price: "₹220", spicy: false, veg: true }
+          { id: "11-s1-i1", name: "Rogan Josh", desc: "Slow-cooked lamb curry.", price: "₹420", spicy: false, veg: false, img: menuImages.indian },
+          { id: "11-s1-i2", name: "Dal Makhani", desc: "Creamy black lentils simmered slowly.", price: "₹220", spicy: false, veg: true, img: menuImages.indian }
         ]
       }
     ]
@@ -270,15 +292,15 @@ export const restroData = [
         id: "13-s1",
         title: "Pizzas",
         items: [
-          { id: "13-s1-i1", name: "Margherita", desc: "Classic tomato, basil & mozzarella.", price: "₹299", spicy: false, veg: true },
-          { id: "13-s1-i2", name: "Pepperoni Feast", desc: "Loaded with pepperoni slices.", price: "₹420", spicy: false, veg: false }
+          { id: "13-s1-i1", name: "Margherita", desc: "Classic tomato, basil & mozzarella.", price: "₹299", spicy: false, veg: true, img: menuImages.pizza },
+          { id: "13-s1-i2", name: "Pepperoni Feast", desc: "Loaded with pepperoni slices.", price: "₹420", spicy: false, veg: false, img: menuImages.pizza }
         ]
       },
       {
         id: "13-s2",
         title: "Sides",
         items: [
-          { id: "13-s2-i1", name: "Cheesy Garlic Bread", desc: "Garlic butter bread with cheese.", price: "₹140", spicy: false, veg: true }
+          { id: "13-s2-i1", name: "Cheesy Garlic Bread", desc: "Garlic butter bread with cheese.", price: "₹140", spicy: false, veg: true, img: menuImages.pizza }
         ]
       }
     ]
@@ -298,8 +320,8 @@ export const restroData = [
         id: "14-s1",
         title: "Sushi & Rolls",
         items: [
-          { id: "14-s1-i1", name: "California Roll", desc: "Crab, avocado & cucumber.", price: "₹360", spicy: false, veg: false },
-          { id: "14-s1-i2", name: "Veggie Maki", desc: "Cucumber, avocado & carrot.", price: "₹220", spicy: false, veg: true }
+          { id: "14-s1-i1", name: "California Roll", desc: "Crab, avocado & cucumber.", price: "₹360", spicy: false, veg: false, img: menuImages.sushi },
+          { id: "14-s1-i2", name: "Veggie Maki", desc: "Cucumber, avocado & carrot.", price: "₹220", spicy: false, veg: true, img: menuImages.sushi }
         ]
       }
     ]
@@ -319,10 +341,13 @@ export const restroData = [
         id: "15-s1",
         title: "Burgers & Combos",
         items: [
-          { id: "15-s1-i1", name: "Classic Beef Burger", desc: "Juicy beef patty with special sauce.", price: "₹220", spicy: false, veg: false },
-          { id: "15-s1-i2", name: "Veggie Burger", desc: "House-made veggie patty with slaw.", price: "₹180", spicy: false, veg: true }
+          { id: "15-s1-i1", name: "Classic Beef Burger", desc: "Juicy beef patty with special sauce.", price: "₹220", spicy: false, veg: false, img: menuImages.burger },
+          { id: "15-s1-i2", name: "Veggie Burger", desc: "House-made veggie patty with slaw.", price: "₹180", spicy: false, veg: true, img: menuImages.burger }
         ]
       }
     ]
   }
-];
+].map((restaurant) => ({
+  ...restaurant,
+  promoted: restaurant.rating > 4.5,
+}));

@@ -105,6 +105,21 @@
   color: #111;
 }
 
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-toggle {
+  border: 0;
+  background: transparent;
+  color: #111;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
 .section-items {
   display: grid;
   grid-template-columns: 1fr;

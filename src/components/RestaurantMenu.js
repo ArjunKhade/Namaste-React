@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./RestaurantMenu.css";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaCategory from "./RestaCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const restaurant = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(-1);
 
   const [menuSections, setMenuSections] = useState([]);
   const [meta, setMeta] = useState({
@@ -59,30 +61,17 @@ const RestaurantMenu = () => {
         {menuSections.length === 0 ? (
           <p style={{ padding: 20 }}>No menu available.</p>
         ) : (
-          menuSections.map((section) => (
-            <section className="menu-section" key={section.id}>
-              <h2 className="section-title">{section.title}</h2>
-              <div className="section-items">
-                {section.items.map((item) => (
-                  <article className="menu-item" key={item.id}>
-                    <div className="item-left">
-                      <h3 className="item-name">{item.name}</h3>
-                      <p className="item-desc">{item.desc}</p>
-                      <div className="item-meta">
-                        <span className="price">{item.price}</span>
-                        {item.spicy && <span className="tag spicy">Spicy</span>}
-                        {item.veg === false ? null : <span className="tag veg">Veg</span>}
-                      </div>
-                    </div>
-                    {item.img && (
-                      <div className="item-right">
-                        <img src={item.img} alt={item.name} />
-                      </div>
-                    )}
-                  </article>
-                ))}
-              </div>
-            </section>
+          menuSections.map((section, index) => (
+            <RestaCategory
+              section={section}
+              key={section.id}
+              showItems={index === showIndex}
+              setShowItems={() =>
+                setShowIndex((currentIndex) =>
+                  currentIndex === index ? -1 : index
+                )
+              }
+            />
           ))
         )}
       </main>
@@ -91,4 +80,3 @@ const RestaurantMenu = () => {
 };
 
 export default RestaurantMenu;
-

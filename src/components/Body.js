@@ -1,8 +1,11 @@
 import RestrorantCard from "./RestrorantCard";
+import withPromotedLabel from "./withPromotedLabel";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/useRestaurantList";
+
+const PromotedRestrorantCard = withPromotedLabel(RestrorantCard);
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -126,7 +129,11 @@ const Body = () => {
         <div className="res-container">
           {filteredRestraurant.map((restro) => (
             <Link to={"restaurant/" + restro.id} key={restro.id}>
-              <RestrorantCard restroData={restro} />
+              {restro.promoted ? (
+                <PromotedRestrorantCard restroData={restro} />
+              ) : (
+                <RestrorantCard restroData={restro} />
+              )}
             </Link>
           ))}
         </div>

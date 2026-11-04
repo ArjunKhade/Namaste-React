@@ -238,15 +238,14 @@ img {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.res-card:first-child {
+.res-card-image {
   position: relative;
 }
 
-.res-card:first-child::before {
-  content: "Promoted";
+.promoted-label {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: -12px;
+  left: 0px;
   background: #ff9800;
   color: #fff;
   font-size: 0.95rem;
