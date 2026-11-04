@@ -19,7 +19,7 @@
   "source": "App.js",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html",
+    "start": "parcel index.html --public-url /",
     "build": "parcel build index.html --public-url ./",
     "build:vercel": "parcel build index.html --public-url /",
     "predeploy": "npm run build",
